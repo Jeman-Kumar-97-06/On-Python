@@ -45,3 +45,21 @@ print(l.isdigit()) #True
 
 m = '123n'
 print(m.isdigit()) #False
+print(m.isalnum()) #True alnum means alphas or nums
+
+str = 'Jeman is an idiot'
+print('Hello, {}'.format(str))
+print(f"Hi {str}")
+
+numr = '42'
+print(numr.zfill(4)) #Prints 0042
+print(str.zfill(30)) #Prints 0000000000000Jeman is an idiot
+print(numr.center(10)) #Creates a string of length 10 and puts '42' in the middle
+print(numr.ljust(10)) #
+print(numr.rjust(10)) #
+
+for n in 'hello':
+    print(n)
+
+if 'a' in 'apple':
+    print (True)
