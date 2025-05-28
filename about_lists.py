@@ -27,3 +27,12 @@ print(nums)
 nums.pop()            # Removes the last element
 print(nums)
 nums.pop(3)           # Removes the element at index 3
+print(nums)
+nums.insert(3,'hell') # changes [5,7,31,1] to [5,7,31,'hell',1]
+print(nums)
+fruits.reverse()      # Reverses the order
+print(nums.count(7))  # Prints how many times 7 occured in the list
+print(nums.index(31)) # Prints the index of the value 31
+nums[1:3] = ["hell",'heaven']
+print(nums)
+
