@@ -20,3 +20,28 @@ print('*'.join(e))
 
 f = 'a*b*c*d*e*f'
 print(f.split('*'))
+
+g = 'jemankumar'
+print(g.startswith('je'))
+
+h = 'Truethat'
+#print(h.startswith(True))#Gives error
+
+print(h.startswith('True'))
+
+print(h.endswith('that'))
+
+i = 'heeeeellllooo'
+print(i.find('e')) #Prints index of the first occurence of 'e'
+
+j = 'heelloo'
+print(j.count('e')) #2
+
+k = 'h'
+print(k.isalpha()) #True
+
+l = '123'
+print(l.isdigit()) #True
+
+m = '123n'
+print(m.isdigit()) #False
