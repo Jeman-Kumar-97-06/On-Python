@@ -19,20 +19,20 @@ e = ['jeman','jack','john','doe']
 print('*'.join(e))
 
 f = 'a*b*c*d*e*f'
-print(f.split('*'))
+print(f.split('*')) #Gives ['a','b','c','d','e','f']
 
 g = 'jemankumar'
-print(g.startswith('je'))
+print(g.startswith('je')) #Gives True
 
 h = 'Truethat'
 #print(h.startswith(True))#Gives error
 
-print(h.startswith('True'))
+print(h.startswith('True')) #Gives True
 
-print(h.endswith('that'))
+print(h.endswith('that')) #Gives True
 
 i = 'heeeeellllooo'
-print(i.find('e')) #Prints index of the first occurence of 'e'
+print(i.find('e')) #Prints index of the first occurence of 'e' 
 
 j = 'heelloo'
 print(j.count('e')) #2
