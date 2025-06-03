@@ -42,3 +42,9 @@ print(nums)           # Prints [5,'hell','heaven','hell',1]
 numsonly = [1,2,10,1,0,-1]
 numsonly.sort()       # changes the original list.
 print(numsonly)
+
+#del(numsonly[0])   --> Will delete the first element of 'numsonly'
+#del(numsonly[1:3]) --> Will delete the second and third element. Will not delete 4rth element.
+
+#print(list('Africa')) --> Will print ['A','f','r','i','c','a']
+
