@@ -38,3 +38,16 @@ print(s-y) # {2,4}
 print(y-s) # empty set
 print(s^y) # result of(s-y) U (y-s) --> {2,4}
 
+d={0,0,0,1,1,1,1,1,2,"jeman","jeevan"}
+print(d)
+for i in d:
+    print(i)
+
+for index,value in enumerate(d):
+    print(f'{index}:{value}')
+
+#The following gives error. If you dont' want error convert 'd' to list like this : list(d)
+for i in range(len(d)):
+    print(d[i])
+
+
