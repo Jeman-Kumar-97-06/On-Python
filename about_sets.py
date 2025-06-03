@@ -28,3 +28,13 @@ t = {13,15,22}
 print(s.issuperset(t)) #True
 print(s.issubset(t))   #False
 print(s.isdisjoint(t)) #False
+
+#Math operations:
+s = {1,2,3,4,5}
+y = {1,3,5,9}
+print(s|y) # {1,2,3,4,5}
+print(s&y) # {1,3,5}
+print(s-y) # {2,4}
+print(y-s) # empty set
+print(s^y) # result of(s-y) U (y-s) --> {2,4}
+
