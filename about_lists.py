@@ -34,5 +34,11 @@ fruits.reverse()      # Reverses the order
 print(nums.count(7))  # Prints how many times 7 occured in the list
 print(nums.index(31)) # Prints the index of the value 31
 nums[1:3] = ["hell",'heaven']
-print(nums)
+print(nums)           # Prints [5,'hell','heaven','hell',1];
 
+print(nums+[1,2])     # Prints [5,'hell','heaven','hell',1,1,2]
+print(nums)           # Prints [5,'hell','heaven','hell',1]
+
+numsonly = [1,2,10,1,0,-1]
+numsonly.sort()       # changes the original list.
+print(numsonly)
