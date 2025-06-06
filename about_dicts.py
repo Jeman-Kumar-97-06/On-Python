@@ -62,6 +62,7 @@ for key, val in person.items():
 for index,(key,value) in enumerate(person.items()):
     print(index,key,value)
 
+#Parsing through a dictionary:
 person = {
     "name":"Jeman",
     "age" : 50,
@@ -70,4 +71,17 @@ person = {
 
 for key,value in person.items():
     if isinstance(value,int):
-        print(f'{key} is numeric')
+        print(f"{key}'s value is numeric")
+
+#Pasing nested dictionaries:
+person = {
+    "name"   : "Issac Clarke",
+    "grades" : {'math':90,'science':85}
+}
+
+for key, value in person.items():
+    if isinstance(value,dict):
+        for subject,score in value.items():
+            print(f"{subject} : {score}")
+    else:
+        print(f"{key} : {value}")
