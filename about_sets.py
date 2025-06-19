@@ -1,3 +1,7 @@
+#A collection which is unordered, Unchangeable (removal and adding allowed) and unindexed.
+#No Duplicates allowed. Duplicated will be removed even if included.
+#Uses "{}" brackets
+
 a = set()
 b = {20}
 c = {'a',1,2,3}

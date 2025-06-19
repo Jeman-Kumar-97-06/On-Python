@@ -1,3 +1,6 @@
+#A collection which is ordered and unchangeable.
+#Uses "()" brackets
+
 a = ()
 b = ('a','b','c','d',1,2,3,True)
 print(b)
