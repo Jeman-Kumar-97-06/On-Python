@@ -26,3 +26,6 @@ print(str(123))
 print(float(123)) #Gives 123.0
 
 print(int(12.5)) #Gives 12
+
+print("Number of letters in your name is : "+len(input("Enter your name"))) #Error
+print("Number of letters in your name is : "+str(len(input("Enter your name")))) #Now no error
