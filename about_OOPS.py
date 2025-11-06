@@ -30,7 +30,7 @@ employee_1 = Employee('Jeman',"Kumar",50000) #instance of a class-Obj
 employee_1.fullname()
 Employee.fullname(employee_1)
 
-#Example : Using Class Attributes:
+#Example : Using NO Class Attributes:
 class Employee_:
     def __init__(self,first,last,pay):
         self.first = first
@@ -48,3 +48,53 @@ employee__2 = Employee_("Jane",'Doe',60000)
 print(employee__1.pay)
 employee__1.apply_raise()
 print(employee__1.pay)
+
+#Example : Using Class Attributes:
+class Employee__:
+    annual_raise = 1.04
+    def __init__(self,first,last,pay):
+        self.first = first
+        self.last  = last
+        self.pay   = pay
+        self.email = first+last+'.email'
+    def fullname(self):
+        return '{} {}'.format(self.first, self.last)
+    def apply_raise(self):
+        self.pay = int(self.pay * Employee__.annual_raise)
+        # self.pay = int(self.pay*self.annual_raise) #--> 0 fucks
+
+employee___1 = Employee__("Jeman","Jane",50000)
+employee___2 = Employee__("Jeevan","Doe",60000)
+
+print(employee___1.__dict__) #U won't see 'annual_raise' here
+print(Employee__.__dict__) # U will see 'annual_raise' here
+
+print(employee___1.pay)
+employee___1.apply_raise()
+print(employee___1.pay)
+
+employee___1.pay = 50000
+print(employee___1.pay)
+Employee__.annual_raise = 1.06
+employee___1.apply_raise()
+print(employee___1.pay)
+
+#Another Example with class attributes : 
+class Employee___:
+    num_of_emps = 0
+    annual_raise = 1.04
+    def __init__(self,first,last,pay):
+        self.first = first
+        self.last  = last
+        self.email = first+last+'.email'
+        Employee___.num_of_emps +=1
+    def fullname(self):
+        return '{} {}'.format(self.first,self.last)
+    def apply_raise(self):
+        self.pay = int(self.pay*self.annual_raise)
+
+print(Employee___.num_of_emps)
+
+employee____1 = Employee___("Jeman","KUmar",50000)
+
+print(Employee___.num_of_emps)
