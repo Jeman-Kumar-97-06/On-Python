@@ -1,69 +1,50 @@
-#CLASS WITHOUT CONSTRUCTOR:
-class StupidNumber:
-    x = 5
+#Example1 --> Only declaration, no initialization:
+class Emp:
+    pass
 
-y = StupidNumber()
-print(y.x)
+emp_1 = Emp()
+emp_2 = Emp()
 
-#CLASS WITH CONSTRUCTOR:
-class Person:
-    def __init__(self,name,age):
-        self.name = name
-        self.age  = age
+print(emp_1) #location x
+print(emp_2) #location y
 
-p1 = Person('Jeman',61)
-print(p1.name)
-print(p1.age)
+emp_1.first = "Corey"
+emp_2.email = "Jack@gmail.com"
 
-#__str__() function for string representation of an object:
-class Animal:
-    def __init__(self,limbs):
-        self.limbs = limbs
-    def __str__(self):
-        return f"This object talks about no of limbs. The no of limbs here is {self.limbs}"
-a1 = Animal(4)
-print(a1)
+emp_2.first = 'Jane'
+# emp_2.email = "Doe@gmail.com"
 
-#Object Methods:
-class Person:
-    def __init__(self,name,age):
-        self.name = name
-        self.age  = age 
-    def myFunc(self):
-        print("Hello my name is : "+self.name)
-p1 = Person("Jeman",61)
-p1.myFunc()
-#changing object props:
-p1.age = 40
-#delete object props:
-del p1.age
-#delete object:
-del p1
+print(emp_1) #location x
+print(emp_2) #location y
 
-#INHERITANCE:
-#Child has same number of props as of the Parent:
-class Animal:
-    def __init__(self,name,age):
-        self.name = name
-        self.age  = age
-    def speak(self):
-        print(f"I am {self.name} and i make sounds")
+#Example2 : Define a class with instance variables:
+class Employee:
+    def __init__(self,first,last,pay):
+        self.first = first #instance variable
+        self.last  = last  #instance variable
+        self.pay   = pay   #instance variable
+    def fullname(self):
+        print (f'{self.first} {self.last}')
 
-class Dog(Animal):
-    def __init__(self,name,age):
-        super().__init__(name,age)
-    def speak(self):
-        print("Woof Woof")
+employee_1 = Employee('Jeman',"Kumar",50000) #instance of a class-Obj
+employee_1.fullname()
+Employee.fullname(employee_1)
 
-#Child has more Props that the Parent:
-class Animal:
-    def __init__(self,name,age):
-        self.name = name
-        self.age  = age
-    def speak(self):
-        print("I make a sound")
+#Example : Using Class Attributes:
+class Employee_:
+    def __init__(self,first,last,pay):
+        self.first = first
+        self.last  = last
+        self.pay   = pay
+        self.email = first + last + '.email'
+    def fullname(self):
+        return '{} {}'.format(self.first, self.last)
+    def apply_raise(self):
+        self.pay = int(self.pay * 1.04)
 
-class Dog(Animal):
-    def __init__(self,limbs,name,age):
-        super().__init__(name,age)
-        self.limbs=limbs
+employee__1 = Employee_("Jeman","Kumar",50000)
+employee__2 = Employee_("Jane",'Doe',60000)
+
+print(employee__1.pay)
+employee__1.apply_raise()
+print(employee__1.pay)
