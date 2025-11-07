@@ -120,19 +120,20 @@ class Employeeyo:
 print("\n\n\nImportant Shit!")
 empyo_1 = Employeeyo('Jeman','doe',50000)
 empyo_2 = Employeeyo("Jack","Doe",60000)
-'''if you say ,
-        Employeeyo.set_raise_amt(2) --> it will change the annual_raise value of all the
-        empyo_1.set_raise_amt(2) --> It will do exactly what the above line did.
-   If you say,
-        Employeeyo.annual_raise = 10 --> it will do exactly what the above line did.
-        empyo_1.annual_raise = 10 --> This line will only change 'empyo_1''s 'annual_raise' value.
+'''
+if you say ,
+Employeeyo.set_raise_amt(2) --> it will change the annual_raise value of all the
+empyo_1.set_raise_amt(2) --> It will do exactly what the above line did.
+
+If you say,
+Employeeyo.annual_raise = 10 --> it will do exactly what the above line did.
+empyo_1.annual_raise = 10 --> This line will only change 'empyo_1''s 'annual_raise' value.
 '''
 
 print(empyo_1.pay)          #50000
 Employeeyo.set_raise_amt(2)
 empyo_1.apply_raise()
 print(empyo_1.annual_raise)
-print(empyo_2.annual_raise)
 print(empyo_1.pay)          #50002
 
 
@@ -172,5 +173,10 @@ class Employeeyo_:
         return cls(first,last,pay)
 
 emp_str_1 = 'Jeman-Doe-50000'
+emp_str_2 = "Jack-Jane-60000"
 new_emp_yo_1 = Employeeyo_.from_string(emp_str_1)
+new_emp_yo_2 = Employeeyo_.from_string(emp_str_2)
 print(new_emp_yo_1.__dict__)
+print(new_emp_yo_2.__dict__)
+
+#Example on Inheritance : 
