@@ -63,4 +63,17 @@ def display():
 
 display()
 
-#decorator syntax:
+#Example3 : Using decorators on functions with args:
+def decorator_3(og_f):
+    def wrapper_f(*args,**kwargs):
+        print("Ran Wrapper")
+        return og_f(*args,**kwargs)
+    return wrapper_f
+
+@decorator_3
+def display(name,age):
+    print('display ran with arguments {} & {}'.format(name,age))
+
+display("John",28)
+
+#Example4 : Using classes as decorators:
