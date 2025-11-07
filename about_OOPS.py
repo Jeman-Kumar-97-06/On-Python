@@ -98,3 +98,54 @@ print(Employee___.num_of_emps)
 employee____1 = Employee___("Jeman","KUmar",50000)
 
 print(Employee___.num_of_emps)
+
+#Examples showing regular vs class vs static methods:
+class Employeeyo:
+    num_of_emps = 0
+    annual_raise = 1.04
+    def __init__(self,first,last,pay):
+        self.first = first
+        self.last  = last
+        self.pay   = pay
+        self.email = first+last+'.email'
+        Employeeyo.num_of_emps += 1
+    def fullname(self):
+        return '{} {}'.format(self.first,self.last)
+    def apply_raise(self):
+        self.pay = int(self.pay*self.annual_raise)
+    @classmethod
+    def set_raise_amt(cls,amount):
+        cls.annual_raise = amount
+
+empyo_1 = Employeeyo('Jeman','doe',50000)
+Employeeyo.set_raise_amt(1.05)
+
+#-------------------------------------------------
+class Employeeyo_:
+    num_of_emps = 0
+    annual_raise = 1.04
+    def __init__(self,first,last,pay):
+        self.first = first
+        self.last  = last
+        self.pay   = pay
+        self.email = first + last + '.email'
+        Employeeyo_.num_of_emps += 1
+    def fullname(self):
+        return '{} {}'.format(self.first,self.last)
+    def apply_raise(self):
+        self.pay = int(self.pay * self.annual_raise)
+    @classmethod
+    def set_raise_amt(cls,amount):
+        cls.annual_raise = amount
+    @classmethod
+    def from_string(cls,emp_str):
+        first, last, pay = emp_str.split('-')
+        return cls(first, last, pay)
+    @staticmethod
+    def is_workday(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
+
+emp_str_1 ="John-Doe-50000"
+emp_str_2 ="Jane-DOe-60000"
