@@ -203,4 +203,50 @@ cE_2 = ChildEmployee("Jane","Doe",60000)
 print(cE_1.email) #JemanJack.email.com
 print(cE_2.email) #JaneDoe.email.com
 
+#----------------------------------
 
+print(cE_1.pay)
+class ChildEmployee2(ParentEmployee):
+    raise_amount=1.10
+cE_3 = ChildEmployee2("X","Y",50000)
+
+cE_1.apply_raise()
+cE_3.apply_raise()
+
+print(cE_1.pay)
+print(cE_3.pay)
+
+#------------------------------------
+
+
+class Manager(ParentEmployee):
+    def __init__(self,first,last,pay, employees=None):
+        super().__init__(first,last,pay) #Used to inherit 'first','last' and 'pay' from 'ParentEmployee'
+        if (employees is None):
+            self.employees = []
+        else:
+            self.employees = employees
+
+    def add_emp(self,emp):
+        if emp not in self.employees:
+            self.employees.append(emp)
+    
+    def remove_emp(self,emp):
+        if emp in self.employees:
+            self.employees.remove(emp)
+    def print_emps(self):
+        for emp in self.employees:
+            emp.fullname()
+
+mgr_1 = Manager("Sue",'Smith',90000,[cE_1,cE_2])
+print(mgr_1.email)
+mgr_1.print_emps()
+
+
+#isinstance() and issubclass() : 
+print(isinstance(mgr_1,Manager))        #True
+print(isinstance(mgr_1,ParentEmployee)) #True cuz it inherited shit
+print(isinstance(mgr_1,ChildEmployee))  #False
+print(issubclass(ChildEmployee,ParentEmployee)) #True
+print(issubclass(Manager,ParentEmployee))   #True
+print(issubclass(Manager,ChildEmployee)) #False
