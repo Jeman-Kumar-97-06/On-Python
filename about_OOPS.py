@@ -102,7 +102,7 @@ print(Employee___.num_of_emps)
 #Examples showing regular vs class vs static methods:
 class Employeeyo:
     num_of_emps = 0
-    annual_raise = 1.04
+    annual_raise = 1
     def __init__(self,first,last,pay):
         self.first = first
         self.last  = last
@@ -111,15 +111,39 @@ class Employeeyo:
         Employeeyo.num_of_emps += 1
     def fullname(self):
         return '{} {}'.format(self.first,self.last)
-    def apply_raise(self):
-        self.pay = int(self.pay*self.annual_raise)
-    @classmethod
+    def apply_raise(self): #Regular method
+        self.pay = int(self.pay + Employeeyo.annual_raise)
+    @classmethod           #Class method
     def set_raise_amt(cls,amount):
         cls.annual_raise = amount
 
+print("\n\n\nImportant Shit!")
 empyo_1 = Employeeyo('Jeman','doe',50000)
-Employeeyo.set_raise_amt(1.05)
+empyo_2 = Employeeyo("Jack","Doe",60000)
+'''if you say ,
+        Employeeyo.set_raise_amt(2) --> it will change the annual_raise value of all the
+        empyo_1.set_raise_amt(2) --> It will do exactly what the above line did.
+   If you say,
+        Employeeyo.annual_raise = 10 --> it will do exactly what the above line did.
+        empyo_1.annual_raise = 10 --> This line will only change 'empyo_1''s 'annual_raise' value.
+'''
 
+print(empyo_1.pay)          #50000
+Employeeyo.set_raise_amt(2)
+empyo_1.apply_raise()
+print(empyo_1.annual_raise)
+print(empyo_2.annual_raise)
+print(empyo_1.pay)          #50002
+
+
+Employeeyo.annual_raise = 1
+empyo_1.apply_raise()       
+print(empyo_1.pay)         #50002+1 = 50003
+
+Employeeyo.set_raise_amt(2)
+empyo_1.apply_raise()
+print(empyo_1.pay)         #50003+2 = 50005
+print("--------------------------\n\n\n")
 #-------------------------------------------------
 class Employeeyo_:
     num_of_emps = 0
@@ -128,24 +152,25 @@ class Employeeyo_:
         self.first = first
         self.last  = last
         self.pay   = pay
-        self.email = first + last + '.email'
+        self.email = first+last+'.email.com'
         Employeeyo_.num_of_emps += 1
-    def fullname(self):
+    def fullname(self): #a regular method --> 'self' as argument
         return '{} {}'.format(self.first,self.last)
     def apply_raise(self):
         self.pay = int(self.pay * self.annual_raise)
     @classmethod
     def set_raise_amt(cls,amount):
         cls.annual_raise = amount
-    @classmethod
-    def from_string(cls,emp_str):
-        first, last, pay = emp_str.split('-')
-        return cls(first, last, pay)
     @staticmethod
     def is_workday(day):
         if day.weekday() == 5 or day.weekday() == 6:
             return False
         return True
+    @classmethod
+    def from_string(cls,emp_str):
+        first, last, pay = emp_str.split("-")
+        return cls(first,last,pay)
 
-emp_str_1 ="John-Doe-50000"
-emp_str_2 ="Jane-DOe-60000"
+emp_str_1 = 'Jeman-Doe-50000'
+new_emp_yo_1 = Employeeyo_.from_string(emp_str_1)
+print(new_emp_yo_1.__dict__)
