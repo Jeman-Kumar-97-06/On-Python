@@ -180,3 +180,27 @@ print(new_emp_yo_1.__dict__)
 print(new_emp_yo_2.__dict__)
 
 #Example on Inheritance : 
+print("\n\n\nINHERITANCE OUTPUT:")
+class ParentEmployee:
+    raise_amount = 1.04
+    def __init__(self,first,last,pay):
+        self.first = first
+        self.last  = last 
+        self.pay   = pay
+        self.email = first+last+'.email.com'
+    def fullname(self):
+        print('{} {}'.format(self.first,self.last))
+    
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_amount)
+
+class ChildEmployee(ParentEmployee):
+    pass
+
+cE_1 = ChildEmployee('Jeman',"Jack",50000)
+cE_2 = ChildEmployee("Jane","Doe",60000)
+
+print(cE_1.email) #JemanJack.email.com
+print(cE_2.email) #JaneDoe.email.com
+
+
