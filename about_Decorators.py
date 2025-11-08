@@ -106,5 +106,5 @@ def greet(name):
     """"Greets a person by name"""
     print(f'Hello {name}')
 
-print(greet.__name__)
-print(greet.__doc__)
+print(greet.__name__) #This prints 'greet'
+print(greet.__doc__)  #This prints "Greets a person by name"
