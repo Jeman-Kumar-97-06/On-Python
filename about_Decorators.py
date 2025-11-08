@@ -76,4 +76,35 @@ def display(name,age):
 
 display("John",28)
 
-#Example4 : Using classes as decorators:
+#Example4 : The WRAPS decorator : 
+#without WRAPS:
+def log(func):
+    def wrapper(*args, **kwargs):
+        print(f'calling {func.__name__}')
+        return func(*args,**kwargs)
+    return wrapper
+
+@log
+def greet(name):
+    """Greets a person by name"""
+    print(f"Hello {name}")
+
+print(greet.__name__) #This prints 'wrapper'
+print(greet.__doc__)  #This prints 'None'
+
+#with WRAPS:
+from functools import wraps
+def log(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        print(f"calling {func.__name__}")
+        return func(*args,**kwargs)
+    return wrapper
+
+@log
+def greet(name):
+    """"Greets a person by name"""
+    print(f'Hello {name}')
+
+print(greet.__name__)
+print(greet.__doc__)
