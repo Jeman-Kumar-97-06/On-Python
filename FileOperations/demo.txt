@@ -1,0 +1,4 @@
+Hello! Welcome to 'demo.txt'
+A man was born
+He died
+End of story.
