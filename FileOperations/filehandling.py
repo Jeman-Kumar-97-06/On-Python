@@ -16,3 +16,21 @@ print(f.read()) #-->Prints the content of txt file.
 print(f.closed)
 f.close()
 print(f.closed)
+
+#If you don't want to manually close the file :
+with open('demo2.txt') as demo2:
+    print(demo2.read())
+
+print(demo2.closed)
+
+with open('demo2.txt') as demo2:
+    print(demo2.read(5)) #Read the first 5 chars
+
+with open('demo2.txt') as demo2:
+    print(demo2.readline()) #Read & Print the first line.
+    print(demo2.readline()) #Read & Print the second line.
+
+with open('demo2.txt') as demo2:
+    for x in demo2:
+        print(x) #Prints all lines
+
